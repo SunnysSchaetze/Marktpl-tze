@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Marktplätze</title>
+
 <style>
 body {
     margin: 0;
@@ -19,11 +20,13 @@ body {
 .marktplatz {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
     font-size: clamp(1.2rem, 2vw, 2rem);
     color: orange;
     text-align: center;
     padding: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .marktplatz span {
@@ -34,19 +37,17 @@ body {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: orange;
-    gap: 10px;
+}
+
+.marktplatz img {
+    width: clamp(2rem, 4vw, 2.5rem);
+    height: clamp(2rem, 4vw, 2.5rem);
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .marktplatz a:hover img {
     transform: scale(1.2);
     filter: brightness(1.5) drop-shadow(0 0 5px orange);
-}
-
-.marktplatz img {
-    width: clamp(2rem, 4vw, 2.5rem);
-    height: clamp(2rem, 4vw, 2.5rem);
 }
 
 @media (max-width: 600px) {
@@ -57,12 +58,22 @@ body {
 }
 </style>
 </head>
+
 <body>
+
 <div class="marktplatz">
+
     <span>Marktplätze:</span>
-    <a href="https://www.kleinanzeigen.de/s-bestandsliste.html?userId=156248118" target="_blank">
+
+    <a href="https://www.kleinanzeigen.de/s-bestandsliste.html?userId=156248118" target="_blank" aria-label="Kleinanzeigen">
         <img src="https://themen.kleinanzeigen.de/media/files/27/3b/273bc204-1648-4354-9bb7-139156345e74/ka_vertical_lightgreen_rgb.png?utm_source=google&utm_medium=organic&utm_campaign=themen" alt="Kleinanzeigen">
     </a>
+
+    <a href="https://wa.me/c/4917638265657" target="_blank" aria-label="WhatsApp Katalog">
+        <img src="https://cdn-icons-png.flaticon.com/512/15713/15713434.png" alt="WhatsApp Katalog">
+    </a>
+
 </div>
+
 </body>
 </html>
