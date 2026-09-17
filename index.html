@@ -67,6 +67,17 @@ body{
     filter: brightness(1.5) drop-shadow(0 0 5px orange);
 }
 
+.marktplatz .hover-label {
+    display: none;
+    margin-left: 8px;
+    color: orange;
+    font-weight: bold;
+}
+
+.marktplatz a:hover .hover-label {
+    display: inline;
+}
+
 @media (max-width: 600px) {
     .marktplatz {
         gap: 10px;
@@ -340,14 +351,17 @@ body{
 
     <a href="https://www.ebay.de/usr/sunnys-schaetze" target="_blank" aria-label="eBay Shop">
         <img src="eBay.png" alt="eBay">
+        <span class="hover-label">eBay</span>
     </a>
 
     <a href="https://www.kleinanzeigen.de/s-bestandsliste.html?userId=156248118" target="_blank" aria-label="Kleinanzeigen">
         <img src="Kleinanzeigen.png" alt="Kleinanzeigen">
+        <span class="hover-label">Kleinanzeigen</span>
     </a>
 
     <a href="https://wa.me/c/4917638265657" target="_blank" aria-label="WhatsApp Katalog">
         <img src="Whatsapp Business.png" alt="WhatsApp Katalog">
+        <span class="hover-label">Whatsapp Shop</span>
     </a>
 </div>
 
