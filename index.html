@@ -44,6 +44,7 @@ body{
     font-size: clamp(1.2rem, 2vw, 2rem);
     text-align: center;
     padding: 20px;
+    position: relative;
 }
 
 .marktplatz span {
@@ -69,13 +70,18 @@ body{
 
 .marktplatz .hover-label {
     display: none;
-    margin-left: 8px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 85%;
+    margin: 0;
     color: orange;
     font-weight: bold;
+    white-space: nowrap;
 }
 
 .marktplatz a:hover .hover-label {
-    display: inline;
+    display: block;
 }
 
 @media (max-width: 600px) {
