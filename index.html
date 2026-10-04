@@ -31,9 +31,121 @@ body{
     color: orange;
     font-family: Arial, sans-serif;
 
+    border: 3px solid #ff7f00;
     border-radius: 25px;
     overflow: hidden;
+    position: relative;
 }
+
+
+/* =========================================================
+   ROBUSTER HOLO-RAHMEN
+   ========================================================= */
+
+.frame-outer {
+    position: absolute;
+    inset: 0;
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff7f00 0%,
+            #ffd36a 15%,
+            #fff4b0 28%,
+            #ffea00 40%,
+            #ffffff 50%,
+            #ffcf4a 62%,
+            #ff8a00 76%,
+            #ffe38a 88%,
+            #ff7f00 100%
+        );
+
+    background-size: 300% 300%;
+    background-position: 0% 50%;
+
+    pointer-events: none;
+    z-index: 1;
+
+    animation: holoFrame 8s ease-in-out infinite;
+}
+
+.frame-outer::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+
+    border-radius: 22px;
+    background: #000000;
+
+    pointer-events: none;
+}
+
+.frame-inner {
+    position: absolute;
+    inset: 9px;
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff7f00 0%,
+            #ffd36a 15%,
+            #fff4b0 28%,
+            #ffea00 40%,
+            #ffffff 50%,
+            #ffcf4a 62%,
+            #ff8a00 76%,
+            #ffe38a 88%,
+            #ff7f00 100%
+        );
+
+    background-size: 300% 300%;
+    background-position: 0% 50%;
+
+    pointer-events: none;
+    z-index: 1;
+
+    animation: holoFrame 8s ease-in-out infinite;
+}
+
+.frame-inner::after {
+    content: "";
+    position: absolute;
+    inset: 2px;
+
+    border-radius: 16px;
+    background: #000000;
+
+    pointer-events: none;
+}
+
+@keyframes holoFrame {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    25% {
+        background-position: 50% 0%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    75% {
+        background-position: 50% 100%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* =========================================================
+   MARKTPLÄTZE
+   ========================================================= */
 
 .marktplatz {
     display: flex;
@@ -45,6 +157,7 @@ body{
     text-align: center;
     padding: 20px;
     position: relative;
+    z-index: 3;
 }
 
 .marktplatz span {
@@ -351,6 +464,10 @@ body{
 </head>
 
 <body>
+
+<!-- ROBUSTER RAHMEN -->
+<div class="frame-outer"></div>
+<div class="frame-inner"></div>
 
 <div class="marktplatz">
     <span>Marktplätze:</span>
